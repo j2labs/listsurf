@@ -216,5 +216,5 @@ class APIListDisplayHandler(BaseHandler, WebMessageHandler):
     def post(self):
         """Renders a template with our links listed
         """
-        self.get()
-        return self.render(status_code=200)
+        return self.get()
+
