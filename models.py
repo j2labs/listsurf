@@ -15,7 +15,7 @@ from timekeeping import MillisecondField
 ### Social Models
 ###
 
-class UserProfile(Document):#, OwnedModel, StreamedModel):
+class UserProfile(Document):
     """A UserProfile is essentially any publicly available info about the user.
     Stored in a document separate from the User itself for security.
     """
