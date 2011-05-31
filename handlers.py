@@ -135,7 +135,7 @@ class AccountLogoutHandler(BaseHandler, Jinja2Rendering):
 
 ### Web Handlers
 
-class ListDisplayHandler(BaseHandler, WebMessageHandler, Jinja2Rendering):
+class ListDisplayHandler(BaseHandler, Jinja2Rendering):
     """A link listserv (what?!)
     """
     @web_authenticated
@@ -152,7 +152,7 @@ class ListDisplayHandler(BaseHandler, WebMessageHandler, Jinja2Rendering):
         return self.render_template('linklists/link_list.html', **context)
 
 
-class ListAddHandler(BaseHandler, WebMessageHandler, Jinja2Rendering):
+class ListAddHandler(BaseHandler, Jinja2Rendering):
     """A link listserv (what?!)
     """
     @web_authenticated
@@ -191,7 +191,7 @@ class ListAddHandler(BaseHandler, WebMessageHandler, Jinja2Rendering):
 
 ### API Handler
 
-class APIListDisplayHandler(BaseHandler, WebMessageHandler):
+class APIListDisplayHandler(BaseHandler):
     """A link listserv (what?!)
     """
     @web_authenticated
