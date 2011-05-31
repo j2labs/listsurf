@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 
-import pymongo
 import logging
 
 from brubeck.request_handling import Brubeck
