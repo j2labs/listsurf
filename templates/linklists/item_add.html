@@ -1,0 +1,20 @@
+{% extends "site_base.html" %}
+{% block site_body %}
+
+<div id="login_fields">
+  <form action="/add_item" method="post">
+    <table class="forms">
+      <tr><td>URL</td><td><input type="text" name="url" value="{{ url }}" /></td></tr>
+      <tr><td class="buttons"><input type="submit" /></td></tr>
+    </table>
+  </form>
+</div>
+
+<div><hr></div>
+
+<p class="center">Submit links with this bookmarklet: <a href="javascript:window.location=%22http://localhost:6767/add_item?u=%22+encodeURIComponent(document.location)+%22&t=%22+encodeURIComponent(document.title)">Surf Later</a></p>
+
+<pre><code></code></pre>
+
+{% endblock %}
+
