@@ -22,7 +22,7 @@ There is very little documentation until the project moves further along. But if
 
 ![Adding a link](/j2labs/listsurf/raw/master/media/screens/adding_link.png)
 
-## Bookmarketlet
+## Bookmarklet
 
 ![Bookmarklet](/j2labs/listsurf/raw/master/media/screens/bookmarklet.png)
 
