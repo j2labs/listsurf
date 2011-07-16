@@ -7,8 +7,8 @@ from brubeck.request_handling import Brubeck
 from brubeck.templating import load_jinja2_env
 
 from handlers import (AccountLoginHandler,
-                      AccountCreateHandler,
                       AccountLogoutHandler,
+                      AccountCreateHandler,
                       ListDisplayHandler,
                       ListAddHandler,
                       APIListDisplayHandler)
@@ -26,8 +26,8 @@ db_conn = init_db_conn()
 # Routing config
 handler_tuples = [
     (r'^/login', AccountLoginHandler),
-    (r'^/create', AccountCreateHandler),
     (r'^/logout', AccountLogoutHandler),
+    (r'^/create', AccountCreateHandler),
     (r'^/add_item', ListAddHandler),
     (r'^/api', APIListDisplayHandler),
     (r'^/$', ListDisplayHandler),
