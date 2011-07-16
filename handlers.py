@@ -69,6 +69,31 @@ class BaseHandler(WebMessageHandler, UserHandlingMixin):
 ### Account Handlers
 ###
 
+class AccountLoginHandler(BaseHandler, Jinja2Rendering):
+    def get(self):
+        """Offers login form to user
+        """
+        return self.render_template('accounts/login.html')
+    
+    @web_authenticated
+    def post(self):
+        """Checks credentials with decorator and sends user authenticated
+        users to the landing page.
+        """
+        self.set_cookie('user_id', self.current_user.username,
+                        secret=self.application.cookie_secret)
+        
+        return self.redirect('/')
+
+
+class AccountLogoutHandler(BaseHandler, Jinja2Rendering):
+    def get(self):
+        """Clears cookie and sends user to login page
+        """
+        self.delete_cookies()
+        return self.redirect('/login')
+
+
 class AccountCreateHandler(BaseHandler, Jinja2Rendering):
     def get(self):
         """Offers login form to user
@@ -102,31 +127,6 @@ class AccountCreateHandler(BaseHandler, Jinja2Rendering):
                         secret=self.application.cookie_secret)
 
         return self.redirect('/')
-
-    
-class AccountLoginHandler(BaseHandler, Jinja2Rendering):
-    def get(self):
-        """Offers login form to user
-        """
-        return self.render_template('accounts/login.html')
-    
-    @web_authenticated
-    def post(self):
-        """Checks credentials with decorator and sends user authenticated
-        users to the landing page.
-        """
-        self.set_cookie('user_id', self.current_user.username,
-                        secret=self.application.cookie_secret)
-        
-        return self.redirect('/')
-
-
-class AccountLogoutHandler(BaseHandler, Jinja2Rendering):
-    def get(self):
-        """Clears cookie and sends user to login page
-        """
-        self.delete_cookies()
-        return self.redirect('/login')
 
 
 ###
