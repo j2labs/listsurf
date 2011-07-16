@@ -8,7 +8,7 @@ from dictshield.fields import (StringField,
 # this might get moved
 from dictshield.fields import ObjectIdField
 
-from timekeeping import MillisecondField
+from brubeck.timekeeping import MillisecondField
 
 
 ###
