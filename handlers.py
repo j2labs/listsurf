@@ -142,7 +142,7 @@ class ListDisplayHandler(BaseHandler, Jinja2Rendering):
     def get(self):
         """Renders a template with our links listed
         """
-        items_qs = load_listitems(self.db_conn, self.current_user._id)
+        items_qs = load_listitems(self.db_conn, self.current_user.id)
         items_qs.sort('updated_at', direction=pymongo.DESCENDING)
         
         items = [(i['updated_at'], i['url']) for i in items_qs]
@@ -175,7 +175,7 @@ class ListAddHandler(BaseHandler, Jinja2Rendering):
             url = 'http://%s' % (url)
             
         link_item = {
-            'owner': self.current_user._id,
+            'owner': self.current_user.id,
             'username': self.current_user.username,
             'created_at': self.current_time,
             'updated_at': self.current_time,
@@ -198,7 +198,7 @@ class APIListDisplayHandler(BaseHandler):
     def get(self):
         """Renders a template with our links listed
         """
-        items_qs = load_listitems(self.db_conn, self.current_user._id)
+        items_qs = load_listitems(self.db_conn, self.current_user.id)
         items_qs.sort('updated_at', direction=pymongo.DESCENDING)
         num_items = items_qs.count()
         
