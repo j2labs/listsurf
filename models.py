@@ -1,4 +1,4 @@
-from dictshield.base import BaseField, DictPunch
+from dictshield.base import BaseField
 from dictshield.document import Document
 from dictshield.fields import (StringField,
                                BooleanField,
