@@ -24,9 +24,6 @@ class BaseHandler(WebMessageHandler, UserHandlingMixin):
     """This Mixin provides a `get_current_user` implementation that
     validates auth against our hardcoded user: `demo_user`
     """
-    def prepare(self):
-        self.current_time = int(time.time() * 1000)
-
     def get_current_user(self):
         """Attempts to load user information from cookie. If that
         fails, it looks for credentials as arguments.
