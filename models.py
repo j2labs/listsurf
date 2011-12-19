@@ -1,12 +1,12 @@
-from dictshield.base import BaseField
-from dictshield.document import Document
-from dictshield.fields import (StringField,
+from dictshield.document import Document, diff_id_field
+from dictshield.fields import (BaseField,
+                               StringField,
                                BooleanField,
                                URLField,
                                EmailField,
                                LongField)
 # this might get moved
-from dictshield.fields import ObjectIdField
+from dictshield.fields.mongo import ObjectIdField
 
 from brubeck.timekeeping import MillisecondField
 
@@ -15,6 +15,7 @@ from brubeck.timekeeping import MillisecondField
 ### Social Models
 ###
 
+@diff_id_field(ObjectIdField, ['id'])
 class UserProfile(Document):
     """A UserProfile is essentially any publicly available info about the user.
     Stored in a document separate from the User itself for security.
@@ -44,6 +45,7 @@ class UserProfile(Document):
 ### List Models
 ###
     
+@diff_id_field(ObjectIdField, ['id'])
 class ListItem(Document):
     """Bare minimum to have the concept of streamed item.
     """
