@@ -1,0 +1,10 @@
+Cython
+Jinja2
+gevent
+gevent-zeromq
+greenlet
+py-bcrypt
+pymongo
+python-dateutil
+pyzmq
+ujson
