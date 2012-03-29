@@ -15,7 +15,6 @@ from brubeck.timekeeping import MillisecondField
 ### Social Models
 ###
 
-@diff_id_field(ObjectIdField, ['id'])
 class UserProfile(Document):
     """A UserProfile is essentially any publicly available info about the user.
     Stored in a document separate from the User itself for security.
@@ -33,6 +32,9 @@ class UserProfile(Document):
     location = StringField(max_length=100)
     website = URLField()
 
+    class Meta:
+        id_field = ObjectIdField
+
     _private_fields = [
         'owner',
     ]
@@ -45,7 +47,6 @@ class UserProfile(Document):
 ### List Models
 ###
     
-@diff_id_field(ObjectIdField, ['id'])
 class ListItem(Document):
     """Bare minimum to have the concept of streamed item.
     """
@@ -58,6 +59,9 @@ class ListItem(Document):
     updated_at = MillisecondField()
 
     url = URLField()
+
+    class Meta:
+        id_field = ObjectIdField
 
     _private_fields = [
         'owner',
