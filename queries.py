@@ -2,7 +2,7 @@
 
 
 import pymongo
-from brubeck.models import User
+from models import User
 
 
 ###

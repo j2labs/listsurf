@@ -1,4 +1,4 @@
-from dictshield.document import Document, diff_id_field
+from dictshield.document import Document, swap_field
 from dictshield.fields import (BaseField,
                                StringField,
                                BooleanField,
@@ -8,12 +8,16 @@ from dictshield.fields import (BaseField,
 # this might get moved
 from dictshield.fields.mongo import ObjectIdField
 
+from brubeck.models import User
 from brubeck.timekeeping import MillisecondField
 
 
 ###
 ### Social Models
 ###
+
+### Adjust ID field in Brubeck models
+User = swap_field(User, ObjectIdField, ['id'])
 
 class UserProfile(Document):
     """A UserProfile is essentially any publicly available info about the user.
