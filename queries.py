@@ -85,44 +85,6 @@ def save_user(db, user):
 
 
 ###
-### UserProfile Handling
-###
-
-USERPROFILE_COLLECTION = 'userprofiles'
-indexes_userprofile = [
-    [('owner', pymongo.ASCENDING)],
-    [('username', pymongo.ASCENDING)],
-]
-    
-
-def load_userprofile(db, username=None, uid=None):
-    """Loads a user document from MongoDB.
-    """
-    query_dict = dict()
-    if username:
-        query_dict['username'] = username.lower()
-    elif uid:
-        query_dict['owner'] = uid
-    else:
-        raise ValueError('<username> or <email> field required')
-
-    userprofile_dict = db[USERPROFILE_COLLECTION].find_one(query_dict)
-    return userprofile_dict
-
-
-def save_userprofile(db, userprofile):
-    """Loads a user document from MongoDB.
-    """
-    userprofile_doc = userprofile.to_python()
-    upid = db[USERPROFILE_COLLECTION].insert(userprofile_doc)
-    userprofile._id = upid
-
-    apply_all_indexes(db, indexes_userprofile, USERPROFILE_COLLECTION)
-
-    return upid
-
-
-###
 ### ListItem Handling
 ###
 
