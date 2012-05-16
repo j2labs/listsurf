@@ -34,7 +34,7 @@ So we see login/logout urls, a url for creating an account, a url for adding an 
 The next are of concern is the Brubeck config. The name of the values should speak for themselves so I will just copy the config here.
 
     config = {
-        'mongrel2_pair': ('ipc://127.0.0.1:9999', 'ipc://127.0.0.1:9998'),
+        'msg_conn': Mongrel2Connection('tcp://127.0.0.1:9999','tcp://127.0.0.1:9998'),
         'handler_tuples': handler_tuples,
         'template_loader': load_jinja2_env('./templates'),
         'db_conn': db_conn,

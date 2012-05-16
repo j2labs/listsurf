@@ -3,6 +3,7 @@
 
 import logging
 
+from brubeck.connections import Mongrel2Connection
 from brubeck.request_handling import Brubeck
 from brubeck.templating import load_jinja2_env
 
@@ -35,7 +36,7 @@ handler_tuples = [
 
 # Application config
 config = {
-    'mongrel2_pair': ('tcp://127.0.0.1:9999', 'tcp://127.0.0.1:9998'),
+    'msg_conn': Mongrel2Connection('tcp://127.0.0.1:9999','tcp://127.0.0.1:9998'),
     'handler_tuples': handler_tuples,
     'template_loader': load_jinja2_env('./templates'),
     'db_conn': db_conn,
