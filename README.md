@@ -50,25 +50,25 @@ Not a particularly exciting design, but gets the job done. And hey, the design e
 
 ## Login screen
 
-![Login screen](/j2labs/listsurf/raw/master/media/screens/login_window.png)
+![Login screen](https://raw.github.com/j2labs/listsurf/master/media/screens/login_window.png)
 
 ## Create account
 
-![Create account](/j2labs/listsurf/raw/master/media/screens/create_account.png)
+![Create account](https://raw.github.com/j2labs/listsurf/master/media/screens/create_account.png)
 
 ## List of links
 
-![List of links](/j2labs/listsurf/raw/master/media/screens/list_of_links.png)
+![List of links](https://raw.github.com/j2labs/listsurf/master/media/screens/list_of_links.png)
 
 ## Adding a link
 
-![Adding a link](/j2labs/listsurf/raw/master/media/screens/adding_link.png)
+![Adding a link](https://raw.github.com/j2labs/listsurf/master/media/screens/adding_link.png)
 
 ## Bookmarklet
 
-![Bookmarklet](/j2labs/listsurf/raw/master/media/screens/bookmarklet.png)
+![Bookmarklet](https://raw.github.com/j2labs/listsurf/master/media/screens/bookmarklet.png)
 
 ## JSON API
 
-![JSON API](/j2labs/listsurf/raw/master/media/screens/api_output.png)
+![JSON API](https://raw.github.com/j2labs/listsurf/master/media/screens/api_output.png)
 
